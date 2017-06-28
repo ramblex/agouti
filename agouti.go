@@ -24,6 +24,7 @@ func PhantomJS(options ...Option) *WebDriver {
 	if !defaultOptions.RejectInvalidSSL {
 		command = append(command, "--ignore-ssl-errors=true")
 	}
+	command = append(command, "--webdriver-loglevel=DEBUG")
 	return NewWebDriver("http://{{.Address}}", command, options...)
 }
 
